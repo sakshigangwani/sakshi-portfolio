@@ -45,8 +45,18 @@
   height: 450px;
   object-fit: cover;
   cursor: pointer;
-  box-shadow: 0 0 30px rgba(174, 113, 255, 0.6), 
-              0 0 60px rgba(110, 142, 251, 0.4); /* glowing effect */
-  transition: box-shadow 0.3s ease;
-  border-radius: 50%;
+  border-radius: 50%; /* Optional: makes image circular */
+  animation: glowPulse 2s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 10px 2px rgba(200, 120, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px 10px #EBD3F8;
+  }
+  100% {
+    box-shadow: 0 0 10px 2px rgba(200, 120, 255, 0.4);
+  }
 }
