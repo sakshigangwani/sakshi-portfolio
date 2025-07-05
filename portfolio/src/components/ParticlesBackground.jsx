@@ -29,7 +29,7 @@ const ParticlesBackground = () => {
             type: "circle"
           },
           opacity: {
-            value: 0.8,
+            value: 0.7,
             random: true
           },
           size: {

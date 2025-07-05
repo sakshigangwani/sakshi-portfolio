@@ -10,55 +10,109 @@ const Home = () => {
         <>
             <ParticlesBackground />
             <div className="homeContainer">
-            <motion.div initial={{ scale: 0.3, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}>
-                <Navbar />
-            </motion.div>
+                <motion.div
+                    initial={{ scale: 0.3, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                    <Navbar />
+                </motion.div>
 
-            <div className="body-content">
-                <div className="txt-content">
-                    <motion.div initial={{ x: -100, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className='titleContent'
-                    >
-                        <p className="name-title">Hi, My name is Sakshi Gangwani</p>
+                <div className="body-content">
+                    <div className="txt-content">
+                        <motion.div
+                            initial={{ x: -100, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="titleContent"
+                        >
+                            <p className="name-title">Hi, My name is Sakshi Gangwani</p>
 
-                        {/* Static part */}
-                        <p className="caption">
-                            I build web & mobile apps, design smart IoT systems, and
+                            <div className="caption">
+                                <p>I build web & mobile apps,</p>
+                                <p>design smart IoT systems, and</p>
 
-                        {/* Typing effect only on the last line */}
-                        <TypeAnimation
-                            sequence={[
-                                ' I have a Patent to prove it!',
-                                1000,
-                                '', // clear
-                                500
-                            ]}
-                            wrapper="span"
-                            cursor={true}
-                            repeat={Infinity}
-                            style={{ fontSize: '30px', color: '#E5D9F2', fontWeight: "bold" }}
-                        /></p>
-                        <button className="btn">Check Resume</button>
-                    </motion.div>
-                </div>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '10px' }}>
+                                    <span style={{ fontSize: '28px', color: '#E5D9F2' }}>I have a</span>
+                                    <TypeAnimation
+                                        sequence={[
+                                            ' Patent to prove it!',
+                                            1500,
+                                            '',
+                                            500
+                                        ]}
+                                        wrapper="span"
+                                        cursor={true}
+                                        repeat={Infinity}
+                                        style={{
+                                            fontSize: '28px',
+                                            color: '#b19cd9',
+                                            fontWeight: 'bold'
+                                        }}
+                                    />
+                                </div>
+                            </div>
+                            <button className="btn">Explore Projects</button>
+                        </motion.div>
+                    </div>
 
-                <div className="image">
-                    <motion.div initial={{ x: 100, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                        className='cardsContent'
-                    >
-                        <img src={profileImage} alt="" className="img" />
-                    </motion.div>
+                    <div className="image">
+                        <motion.div
+                            initial={{ x: 100, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                            className="image-wrapper"
+                        >
+                            <div className="image-wrapper">
+                                <div className="glow-ring"></div>
+                                <motion.img
+                                    src={profileImage}
+                                    alt="Sakshi Gangwani"
+                                    className="profile-image"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ duration: 0.3 }}
+                                />
+                            </div>
+                            <p className="img-caption">Tech Enthusiast | Creator | Dreamer</p>
+                            <div className="intro-social-section">
+                                <div className="social-media-box">
+                                    <div className="social-row">
+                                        <a href="https://github.com" target="_blank" className="social-icon" title="GitHub">
+                                            <img src="/icons/github.png" className="img-icon" />
+                                        </a>
+                                        <a href="https://leetcode.com" target="_blank" className="social-icon" title="LeetCode">
+                                            <img src="/icons/leetcode.png" className="img-icon" />
+                                        </a>
+                                        <a href="https://linkedin.com" target="_blank" className="social-icon" title="LinkedIn">
+                                            <img src="/icons/linkedin.png" className="img-icon" />
+                                        </a>
+                                        <a href="mailto:sakshi@email.com" className="social-icon" title="Email">
+                                            <img src="/icons/email.png" className="img-icon" />
+                                        </a>
+                                    </div>
+
+                                    <div className="social-row">
+                                        <a href="https://behance.net" target="_blank" className="social-icon" title="Behance">
+                                            <img src="/icons/behance.png" className="img-icon" />
+                                        </a>
+                                        <a href="https://dribbble.com" target="_blank" className="social-icon" title="Dribbble">
+                                            <img src="/icons/dribbble.png" className="img-icon" />
+                                        </a>
+                                        <a href="https://instagram.com" target="_blank" className="social-icon" title="Instagram">
+                                            <img src="/icons/instagram.png" className="img-icon" />
+                                        </a>
+                                        <a href="https://x.com" target="_blank" className="social-icon" title="X">
+                                            <img src="/icons/x.png" className="img-icon" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
-        </div>
         </>
-    )
-}
+    );
+};
 
 export default Home;
