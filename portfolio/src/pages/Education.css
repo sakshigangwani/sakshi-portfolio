@@ -1,0 +1,202 @@
+
+.education-container {
+    padding: 4rem 2rem;
+    color: white;
+    position: relative;
+}
+
+.education-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    opacity: 0.7;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #9c27b0;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.timeline-item {
+    width: 50%;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    /* Remove justify-content here, we'll handle spacing differently */
+}
+
+.timeline-item.left {
+    left: 0;
+    flex-direction: row-reverse; /* Place logo after content for left items */
+    padding-left: 0; /* Adjust padding */
+}
+
+.timeline-item.right {
+    left: 50%;
+    padding-right: 0; /* Adjust padding */
+}
+
+.timeline-logo-on-line {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #282c36;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    border: 3px solid #9c27b0;
+}
+
+.timeline-logo-on-line img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* Positioning for left and right timeline items - Logo on the line */
+.timeline-item.left .timeline-logo-on-line {
+    right: -25px; /* Half of the logo's width to center on the line */
+}
+
+.timeline-item.right .timeline-logo-on-line {
+    left: -25px; /* Half of the logo's width to center on the line */
+}
+
+.content-box {
+    background: #1e1e35;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin: 2rem 0;
+    max-width: 450px;
+}
+
+.edu-logo-inside-card {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.8rem;
+}
+
+/* Connectors from Logo to Card */
+.timeline-logo-on-line::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px; /* Length of the connector */
+    height: 3px;
+    background: #9c27b0;
+    z-index: 2;
+}
+
+.timeline-logo-on-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    z-index: 2;
+}
+
+/* Left items connector */
+.timeline-item.left .timeline-logo-on-line::before {
+    left: -25px; /* Extend to the left */
+}
+
+.timeline-item.left .timeline-logo-on-line::after {
+    left: -33px; /* Position arrowhead */
+    border-width: 8px 0 8px 8px; /* Point left */
+    border-color: transparent transparent transparent #9c27b0;
+}
+
+/* Right items connector */
+.timeline-item.right .timeline-logo-on-line::before {
+    right: -25px; /* Extend to the right */
+}
+
+.timeline-item.right .timeline-logo-on-line::after {
+    right: -33px; /* Position arrowhead */
+    border-width: 8px 8px 8px 0; /* Point right */
+    border-color: transparent #9c27b0 transparent transparent;
+}
+
+/* Adjust content box margin for spacing */
+.timeline-item.left .content-box {
+    margin-right: 2rem; /* Add space between card and logo */
+}
+
+.timeline-item.right .content-box {
+    margin-left: 2rem; /* Add space between card and logo */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        flex-direction: row; /* Revert flex direction */
+        align-items: flex-start; /* Align items from the top */
+        padding-left: 3rem; /* Adjust padding for content offset */
+    }
+
+    .timeline-logo-on-line {
+        left: 20px;
+        transform: translateY(-50%) translateX(-50%);
+    }
+
+    .content-box {
+        margin-left: 3rem;
+        margin-right: 0;
+        width: calc(100% - 3rem);
+    }
+
+    /* Adjust connectors for mobile */
+    .timeline-logo-on-line::before {
+        width: 15px; /* Shorter connector on mobile */
+        right: -15px; /* Extend to the right */
+        left: auto;
+    }
+
+    .timeline-logo-on-line::after {
+        right: -23px;
+        border-width: 8px 8px 8px 0; /* Point right */
+        border-color: transparent #9c27b0 transparent transparent;
+        left: auto;
+    }
+}

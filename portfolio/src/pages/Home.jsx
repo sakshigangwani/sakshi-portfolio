@@ -10,13 +10,7 @@ const Home = () => {
         <>
             <ParticlesBackground />
             <div className="homeContainer">
-                <motion.div
-                    initial={{ scale: 0.3, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                >
                     <Navbar />
-                </motion.div>
 
                 <div className="body-content">
                     <div className="txt-content">
