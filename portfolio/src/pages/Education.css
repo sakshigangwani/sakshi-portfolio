@@ -7,13 +7,13 @@
 
 .education-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 48px;
     margin-bottom: 0.5rem;
 }
 
 .education-subtitle {
     text-align: center;
-    font-size: 1rem;
+    font-size: 22px;
     margin-bottom: 3rem;
     opacity: 0.7;
 }
@@ -30,7 +30,7 @@
     bottom: 0;
     left: 50%;
     width: 4px;
-    background: #9c27b0;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
     transform: translateX(-50%);
     z-index: 0;
 }
@@ -63,20 +63,45 @@
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
-    background-color: #282c36;
+    object-fit: contain;
+    background-color: #fff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 3;
-    border: 3px solid #9c27b0;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
 }
 
 .timeline-logo-on-line img {
-    width: 70%;
-    height: 70%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 50%;
+}
+
+.instituteTitle {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.locationTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.degreeTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.duration {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.grade {
+    font-size: 16px;
 }
 
 /* Positioning for left and right timeline items - Logo on the line */
@@ -89,18 +114,19 @@
 }
 
 .content-box {
-    background: #1e1e35;
+    background: transparent;
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     position: relative;
     margin: 2rem 0;
     max-width: 450px;
+    border: 1px solid #1e1e35;
 }
 
 .edu-logo-inside-card {
-    width: 40px;
-    height: 40px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 0.8rem;
@@ -114,7 +140,7 @@
     transform: translateY(-50%);
     width: 25px; /* Length of the connector */
     height: 3px;
-    background: #9c27b0;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
     z-index: 2;
 }
 
@@ -137,7 +163,7 @@
 .timeline-item.left .timeline-logo-on-line::after {
     left: -33px; /* Position arrowhead */
     border-width: 8px 0 8px 8px; /* Point left */
-    border-color: transparent transparent transparent #9c27b0;
+    border-color: transparent transparent transparent #fbc2eb;
 }
 
 /* Right items connector */
@@ -148,7 +174,7 @@
 .timeline-item.right .timeline-logo-on-line::after {
     right: -33px; /* Position arrowhead */
     border-width: 8px 8px 8px 0; /* Point right */
-    border-color: transparent #9c27b0 transparent transparent;
+    border-color: transparent #fbc2eb transparent transparent;
 }
 
 /* Adjust content box margin for spacing */
@@ -160,43 +186,64 @@
     margin-left: 2rem; /* Add space between card and logo */
 }
 
-/* Responsive */
 @media (max-width: 768px) {
+    .timeline {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
     .timeline-line {
-        left: 20px;
+        left: 8px;
+        transform: none;
     }
 
     .timeline-item {
         width: 100%;
-        left: 0;
-        text-align: left;
-        flex-direction: row; /* Revert flex direction */
-        align-items: flex-start; /* Align items from the top */
-        padding-left: 3rem; /* Adjust padding for content offset */
+        left: 0 !important;
+        padding: 1rem 0;
+        flex-direction: row !important;
+        margin-bottom: 2rem;
     }
 
     .timeline-logo-on-line {
-        left: 20px;
-        transform: translateY(-50%) translateX(-50%);
+        left: 0 !important;
+        right: auto !important;
+        transform: translateY(-50%);
+        margin-left: -30px;
     }
 
-    .content-box {
-        margin-left: 3rem;
-        margin-right: 0;
+    .timeline-item .content-box {
+        margin: 1rem 0 0 3rem;
+        max-width: 100%;
         width: calc(100% - 3rem);
     }
 
-    /* Adjust connectors for mobile */
-    .timeline-logo-on-line::before {
-        width: 15px; /* Shorter connector on mobile */
-        right: -15px; /* Extend to the right */
-        left: auto;
+    .timeline-logo-on-line::before,
+    .timeline-logo-on-line::after {
+        display: none;
     }
 
-    .timeline-logo-on-line::after {
-        right: -23px;
-        border-width: 8px 8px 8px 0; /* Point right */
-        border-color: transparent #9c27b0 transparent transparent;
-        left: auto;
+    .education-title {
+        font-size: 36px;
+    }
+
+    .education-subtitle {
+        font-size: 18px;
+    }
+
+    .edu-logo-inside-card {
+        width: 80px;
+        height: 80px;
+    }
+
+    .instituteTitle {
+        font-size: 20px;
+    }
+
+    .locationTitle,
+    .degreeTitle,
+    .duration,
+    .grade {
+        font-size: 16px;
     }
 }

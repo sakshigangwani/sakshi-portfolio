@@ -15,9 +15,6 @@ const Navbar = () => {
                     <a href="#projects">Projects</a>
                     <a href="#contact">Contact</a>
                 </div>
-                <div className='btn-github'>
-                    <button></button>
-                </div>
             </div>
         </div>
     )
