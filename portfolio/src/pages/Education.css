@@ -1,249 +1,147 @@
-
-.education-container {
-    padding: 4rem 2rem;
-    color: white;
-    position: relative;
+.education-tabs-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: "Segoe UI", sans-serif;
+    text-align: center;
 }
 
 .education-title {
-    text-align: center;
-    font-size: 48px;
+    font-size: 2.2rem;
     margin-bottom: 0.5rem;
+    color: #fff;
 }
 
 .education-subtitle {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 3rem;
-    opacity: 0.7;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
 }
 
-.timeline {
-    position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.timeline-line {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 4px;
-    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
-    transform: translateX(-50%);
-    z-index: 0;
-}
-
-.timeline-item {
-    width: 50%;
-    padding: 1rem 2rem;
-    position: relative;
-    z-index: 1;
-    box-sizing: border-box;
+.tabs {
     display: flex;
-    align-items: center;
-    /* Remove justify-content here, we'll handle spacing differently */
-}
-
-.timeline-item.left {
-    left: 0;
-    flex-direction: row-reverse; /* Place logo after content for left items */
-    padding-left: 0; /* Adjust padding */
-}
-
-.timeline-item.right {
-    left: 50%;
-    padding-right: 0; /* Adjust padding */
-}
-
-.timeline-logo-on-line {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 3;
-    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
-.timeline-logo-on-line img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+.tab-button {
+    padding: 0.7rem 1.5rem;
+    border: 2px solid #ccc;
+    background-color: "#fff";
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.tab-button:hover {
+    border-color: #d32f2f;
+    color: #d32f2f;
+}
+
+.tab-button.active {
+    background-color: #d32f2f;
+    color: white;
+    border-color: #d32f2f;
+}
+
+.tab-content {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.tab-logo {
+    width: 500px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
 }
 
 .instituteTitle {
-    font-size: 25px;
-    margin-bottom: 10px;
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+    color: #000;
+    font-weight: "bold";
 }
 
-.locationTitle {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.degreeTitle {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.duration {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
+.locationTitle,
+.degreeTitle,
+.duration,
 .grade {
-    font-size: 16px;
+    color: #555;
+    margin: 0.3rem 0;
 }
 
-/* Positioning for left and right timeline items - Logo on the line */
-.timeline-item.left .timeline-logo-on-line {
-    right: -25px; /* Half of the logo's width to center on the line */
-}
 
-.timeline-item.right .timeline-logo-on-line {
-    left: -25px; /* Half of the logo's width to center on the line */
-}
-
-.content-box {
-    background: transparent;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    position: relative;
-    margin: 2rem 0;
-    max-width: 450px;
-    border: 1px solid #1e1e35;
-}
-
-.edu-logo-inside-card {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 0.8rem;
-}
-
-/* Connectors from Logo to Card */
-.timeline-logo-on-line::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 25px; /* Length of the connector */
-    height: 3px;
-    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
-    z-index: 2;
-}
-
-.timeline-logo-on-line::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-style: solid;
-    z-index: 2;
-}
-
-/* Left items connector */
-.timeline-item.left .timeline-logo-on-line::before {
-    left: -25px; /* Extend to the left */
-}
-
-.timeline-item.left .timeline-logo-on-line::after {
-    left: -33px; /* Position arrowhead */
-    border-width: 8px 0 8px 8px; /* Point left */
-    border-color: transparent transparent transparent #fbc2eb;
-}
-
-/* Right items connector */
-.timeline-item.right .timeline-logo-on-line::before {
-    right: -25px; /* Extend to the right */
-}
-
-.timeline-item.right .timeline-logo-on-line::after {
-    right: -33px; /* Position arrowhead */
-    border-width: 8px 8px 8px 0; /* Point right */
-    border-color: transparent #fbc2eb transparent transparent;
-}
-
-/* Adjust content box margin for spacing */
-.timeline-item.left .content-box {
-    margin-right: 2rem; /* Add space between card and logo */
-}
-
-.timeline-item.right .content-box {
-    margin-left: 2rem; /* Add space between card and logo */
-}
+/* 🔻 RESPONSIVE MEDIA QUERIES */
 
 @media (max-width: 768px) {
-    .timeline {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .timeline-line {
-        left: 8px;
-        transform: none;
-    }
-
-    .timeline-item {
-        width: 100%;
-        left: 0 !important;
-        padding: 1rem 0;
-        flex-direction: row !important;
-        margin-bottom: 2rem;
-    }
-
-    .timeline-logo-on-line {
-        left: 0 !important;
-        right: auto !important;
-        transform: translateY(-50%);
-        margin-left: -30px;
-    }
-
-    .timeline-item .content-box {
-        margin: 1rem 0 0 3rem;
-        max-width: 100%;
-        width: calc(100% - 3rem);
-    }
-
-    .timeline-logo-on-line::before,
-    .timeline-logo-on-line::after {
-        display: none;
-    }
-
     .education-title {
-        font-size: 36px;
+        font-size: 1.8rem;
     }
 
     .education-subtitle {
-        font-size: 18px;
+        font-size: 1.2rem;
     }
 
-    .edu-logo-inside-card {
-        width: 80px;
-        height: 80px;
+    .tab-button {
+        font-size: 16px;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .tab-content {
+        padding: 1.5rem;
     }
 
     .instituteTitle {
-        font-size: 20px;
+        font-size: 1.2rem;
     }
 
     .locationTitle,
     .degreeTitle,
     .duration,
     .grade {
-        font-size: 16px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .education-title {
+        font-size: 1.6rem;
+    }
+
+    .education-subtitle {
+        font-size: 1rem;
+    }
+
+    .tab-button {
+        font-size: 14px;
+        padding: 0.5rem 1rem;
+    }
+
+    .tab-content {
+        padding: 1rem;
+    }
+
+    .tab-logo {
+        width: 100%;
+        height: auto;
+    }
+
+    .instituteTitle {
+        font-size: 1rem;
+    }
+
+    .locationTitle,
+    .degreeTitle,
+    .duration,
+    .grade {
+        font-size: 0.9rem;
     }
 }

@@ -1,0 +1,160 @@
+.projects-section {
+    padding: 60px 40px;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto
+}
+
+.projects-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.projects-section p {
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.filters button {
+    background-color: transparent;
+    color: #b084f9;
+    border: 1px solid #b084f9;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.filters button:hover {
+    background-color: #b084f9;
+    color: #000;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #1a1a2e;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    text-align: left;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.tech-tags span {
+    background-color: #2d2d4d;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    color: #a0e9ff;
+}
+
+.project-card h3 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.project-card .date {
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.project-card .desc {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.paper-button {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #2e2043;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.paper-button:hover {
+  background-color: #d0b3ff;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+@media screen and (max-width: 768px) {
+    .projects-section h2 {
+        font-size: 2rem;
+    }
+
+    .filters button {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+
+    .project-card h3 {
+        font-size: 1rem;
+    }
+
+    .project-card .desc {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects-section {
+        padding: 40px 16px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .filters button {
+        width: 100%;
+    }
+
+    .project-card {
+        padding: 16px;
+    }
+}

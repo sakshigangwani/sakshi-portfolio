@@ -1,0 +1,241 @@
+.patent-showcase {
+  padding: 10px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.7rem;
+  color: #fff;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.card {
+  background: transparent;
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 50px;
+  border: 1px solid #fbc2eb;
+  margin-top: 20px;
+}
+
+.card p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.institution {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.college-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.college-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.features {
+  margin-top: 20px;
+  list-style: none;
+  padding-left: 0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.features li {
+  margin: 10px 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.features li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: green;
+}
+
+.goal {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #fbc2eb;
+}
+
+.appreciation-section {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.pdf-preview {
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #2b146b;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  
+}
+
+.download-btn:hover {
+  background-color: #357ae8;
+}
+
+.gallery-section {
+  margin-top: 40px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery-image {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+.check-status {
+  margin-top: 50px;
+  padding: 30px;
+  background-color: #1e1e2f;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.check-status h3 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #fbc2eb;
+}
+
+.application-id {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.status-check-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 24px;
+  background-color: #fbc2eb;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.status-check-btn:hover {
+  background-color: #420d50;
+  color: #fff;
+}
+
+/* ===== Responsive Styles ===== */
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle, .option-one h2 {
+    font-size: 1.3rem;
+  }
+
+  .card, .option-one {
+    padding: 20px;
+  }
+
+  .pdf-preview {
+    height: 430px;
+  }
+
+  .gallery-title {
+    font-size: 24px;
+  }
+
+  .features li {
+    font-size: 0.95rem;
+  }
+
+  .download-btn {
+    width: 300px
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .option-one p,
+  .card p,
+  .goal,
+  .features {
+    font-size: 0.95rem;
+  }
+
+  .status-check-btn,
+  .download-btn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .check-status {
+    padding: 20px;
+  }
+
+  .download-btn {
+    width: 300px
+  }
+}

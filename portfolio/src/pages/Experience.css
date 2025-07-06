@@ -1,0 +1,110 @@
+.experience-section {
+  padding: 4rem 2rem;
+  background-color: transparent;
+  color: white;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.experience-title {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.experience-subtitle {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 3rem;
+  opacity: 0.8;
+}
+
+.experience-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  gap: 2rem;
+}
+
+.experience-card.left {
+  flex-direction: row;
+}
+
+.experience-card.right {
+  flex-direction: row-reverse;
+}
+
+.experience-logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.experience-content {
+  flex: 1;
+  background: #1f1f2e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.experience-content h3 {
+  margin: 0 0 0.3rem;
+  font-size: 24px;
+  color: #fbc2eb;
+}
+
+.experience-content h4 {
+  margin: 0 0 0.5rem;
+  font-size: 20px;
+  color: #a18cd1;
+}
+
+.experience-content .location,
+.experience-content .duration {
+  font-size: 16px;
+  margin: 0.2rem 0;
+  color: #ccc;
+}
+
+.experience-content .description {
+  margin-top: 0.8rem;
+  font-size: 16px;
+  line-height: 1.6;
+  padding-left: 1.2rem;
+}
+
+.experience-content .description li {
+  margin-bottom: 0.5rem;
+  list-style-type: disc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-card {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .experience-logo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .experience-content {
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+
+  .experience-title {
+    font-size: 32px;
+  }
+
+  .experience-subtitle {
+    font-size: 16px;
+  }
+}

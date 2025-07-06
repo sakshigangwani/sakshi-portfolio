@@ -1,15 +1,15 @@
+import { useState } from "react";
 import "./Education.css";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 import uscLogo from "../images/usc-logo.png";
-import djSanghviLogo from "../images/djsanghvi-logo.jpg";
+import djSanghviLogo from "../images/djsce.png";
 import kjLogo from "../images/kj.png";
 
 const educationData = [
     {
         id: 1,
         logo: uscLogo,
+        tabTitle: "USC (MSCS)",
         institute: "Viterbi School of Engineering, University of Southern California",
         location: "Los Angeles, United States of America",
         degree: "Masters in Computer Science (MSCS)",
@@ -19,6 +19,7 @@ const educationData = [
     {
         id: 2,
         logo: djSanghviLogo,
+        tabTitle: "DJSCE (B.Tech)",
         institute: "SVKM's Dwarkadas J. Sanghvi College of Engineering",
         location: "Vile Parle, Mumbai, India",
         degree: "B.Tech in Computer Engineering",
@@ -28,6 +29,7 @@ const educationData = [
     {
         id: 3,
         logo: kjLogo,
+        tabTitle: "K. J. Somaiya (Diploma)",
         institute: "K. J. Somaiya Polytechnic",
         location: "Vidyavihar, Mumbai, India",
         degree: "Diploma in Computer Engineering",
@@ -37,64 +39,39 @@ const educationData = [
 ];
 
 const Education = () => {
-    const [isMobile, setIsMobile] = useState(false);
+    const [activeTab, setActiveTab] = useState(educationData[0].id);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    const activeData = educationData.find(item => item.id === activeTab);
 
     return (
-        <div className="education-container">
+        <div className="education-tabs-container">
             <h2 className="education-title">Education</h2>
-            <p className="education-subtitle">
-                My Academic Journey. One class at a time:
-            </p>
+            <p className="education-subtitle">My Academic Journey. One class at a time:</p>
 
-            <div className="timeline">
-                {educationData.map((item, index) => (
-                    <motion.div
-                        className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
+            <div className="tabs">
+                {educationData.map(item => (
+                    <button
                         key={item.id}
-                        initial={{
-                            opacity: 0,
-                            x: isMobile ? 0 : index % 2 === 0 ? -100 : 100,
-                            y: isMobile ? 100 : 0,
-                        }}
-                        whileInView={{ opacity: 1, x: 0, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        viewport={{ once: true }}
+                        className={`tab-button ${item.id === activeTab ? "active" : ""}`}
+                        onClick={() => setActiveTab(item.id)}
                     >
-                        {/* Logo floating on the timeline line */}
-                        <div className="timeline-logo-on-line">
-                            <img src={item.logo} alt={item.institute} />
-                        </div>
-
-                        {/* Card content */}
-                        <div className="content-box">
-                            <img
-                                src={item.logo}
-                                alt={item.institute}
-                                className="edu-logo-inside-card"
-                            />
-                            <h3 className="instituteTitle">{item.institute}</h3>
-                            <h4 className="locationTitle">{item.location}</h4>
-                            <h4 className="degreeTitle">{item.degree}</h4>
-                            <p className="duration">{item.duration}</p>
-                            <p className="grade">
-                                <strong>Grade:</strong> {item.grade}
-                            </p>
-                        </div>
-                    </motion.div>
+                        {item.tabTitle}
+                    </button>
                 ))}
-
-                {/* Main timeline vertical line */}
-                <div className="timeline-line"></div>
             </div>
+
+            {activeData && (
+                <div className="tab-content">
+                    <img src={activeData.logo} alt={activeData.institute} className="tab-logo" />
+                    <h3 className="instituteTitle">{activeData.institute}</h3>
+                    <h4 className="locationTitle">{activeData.location}</h4>
+                    <h4 className="degreeTitle">{activeData.degree}</h4>
+                    <p className="duration">{activeData.duration}</p>
+                    <p className="grade">
+                        <strong>Grade:</strong> {activeData.grade}
+                    </p>
+                </div>
+            )}
         </div>
     );
 };

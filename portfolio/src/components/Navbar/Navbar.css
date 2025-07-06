@@ -1,4 +1,4 @@
-/* Wrapper to center the fixed-width navbar */
+/* Wrapper stays fixed */
 .navbarWrapper {
     position: fixed;
     top: 0;
@@ -8,9 +8,10 @@
     z-index: 1000;
 }
 
-/* Main navbar content with 60% width */
+/* Container with flex layout */
 .navbarContainer {
-    width: 65%;
+    width: 90%;
+    max-width: 1100px;
     background-color: #0d0d1f;
     color: white;
     display: flex;
@@ -20,6 +21,7 @@
     margin: auto;
     border-radius: 30px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    position: relative;
 }
 
 .logo h2 {
@@ -27,6 +29,11 @@
     font-size: 1.8rem;
     color: #ffffff;
     font-weight: 600;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
 }
 
 .navLinks a {
@@ -42,12 +49,50 @@
     color: #a89ff3;
 }
 
-.resume-btn {
-    border: none;
-    outline: none;
-    background: linear-gradient(135deg, #2E236C, #433D8B);
-    color: #fff;
-    border-radius: 30px;
-    font-size: 16px;
-    padding: 15px 30px;
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navLinks {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #0d0d1f;
+        padding: 1rem 0;
+        border-radius: 0 0 20px 20px;
+        display: none;
+    }
+
+    .navLinks.open {
+        display: flex;
+    }
+
+    .navLinks a {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-right: 30px;
+    }
+
+    .title {
+        font-size: 13px;
+    }
 }
