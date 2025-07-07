@@ -1,7 +1,12 @@
-.homeContainer{
+.homeContainer {
+    display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 70vh; /* Ensure it takes full viewport height */
+    padding: 20px; /* Optional: adds spacing for small screens */
+    box-sizing: border-box;
 }
+
 
 .body-content {
     display: flex;
