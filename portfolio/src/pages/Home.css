@@ -211,6 +211,10 @@
     width: 30px;
     height: 30px;
   }
+
+  .type {
+    font-size: 18px;
+  }
 }
 
 /* ----------- Mobile (480px and down) ----------- */
@@ -258,5 +262,8 @@
 
   .social-media-box {
     padding: 10px 14px;
+  }
+  .type {
+    font-size: 18px;
   }
 }

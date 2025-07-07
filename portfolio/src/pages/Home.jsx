@@ -27,7 +27,7 @@ const Home = () => {
                                 <p>design smart IoT systems, and</p>
 
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '10px' }}>
-                                    <span style={{ fontSize: '28px', color: '#E5D9F2' }}>I have a</span>
+                                    <span style={{ fontSize: '26px', color: '#E5D9F2' }}>I have a</span>
                                     <TypeAnimation
                                         sequence={[
                                             ' Patent to prove it!',
@@ -39,10 +39,11 @@ const Home = () => {
                                         cursor={true}
                                         repeat={Infinity}
                                         style={{
-                                            fontSize: '28px',
+                                            fontSize: '26px',
                                             color: '#b19cd9',
                                             fontWeight: 'bold',
                                         }}
+                                        className="type"
                                     />
                                 </div>
                             </div>
