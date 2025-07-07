@@ -10,7 +10,7 @@ const projectsData = [
         tech: ['React', 'React Native', 'Firebase'],
         image: '/images/citywatch.png',
         category: ['android', 'web', 'iot', 'machine-learning'],
-        paperLink: '/papers/citywatch-paper.pdf'
+        paperLink: '/researchPapers/paper.pdf'
     },
     {
         title: 'IoT Enabled Robot for Detecting Gas Pipe Leakage',
