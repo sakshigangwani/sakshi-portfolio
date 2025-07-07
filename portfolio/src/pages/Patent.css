@@ -226,7 +226,7 @@
 
   .status-check-btn,
   .download-btn {
-    width: 100%;
+    width: 80%;
     font-size: 0.95rem;
     padding: 10px;
   }
