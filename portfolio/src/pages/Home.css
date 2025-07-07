@@ -36,7 +36,6 @@
 }
 
 .btn {
-    margin-top: 20px;
     padding: 10px 20px;
     background: linear-gradient(to right, #a18cd1, #fbc2eb);
     border: none;
@@ -46,6 +45,11 @@
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 17px;
+    text-decoration: none;
+}
+
+.btn-container {
+  margin-top: 20px;
 }
 
 .btn:hover {

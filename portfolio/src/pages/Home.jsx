@@ -41,12 +41,14 @@ const Home = () => {
                                         style={{
                                             fontSize: '28px',
                                             color: '#b19cd9',
-                                            fontWeight: 'bold'
+                                            fontWeight: 'bold',
                                         }}
                                     />
                                 </div>
                             </div>
-                            <button className="btn">Explore Projects</button>
+                            <div className="btn-container">
+                                <a href="#projects" className="btn">Explore Projects</a>
+                            </div>
                         </motion.div>
                     </div>
 
@@ -71,25 +73,25 @@ const Home = () => {
                             <div className="intro-social-section">
                                 <div className="social-media-box">
                                     <div className="social-row">
-                                        <a href="https://github.com" target="_blank" className="social-icon" title="GitHub">
+                                        <a href="https://github.com/sakshigangwani" target="_blank" className="social-icon" title="GitHub">
                                             <img src="/icons/github.png" className="img-icon" />
                                         </a>
                                         <a href="https://leetcode.com" target="_blank" className="social-icon" title="LeetCode">
                                             <img src="/icons/leetcode.png" className="img-icon" />
                                         </a>
-                                        <a href="https://linkedin.com" target="_blank" className="social-icon" title="LinkedIn">
+                                        <a href="https://www.linkedin.com/in/sakshi-gangwani/" target="_blank" className="social-icon" title="LinkedIn">
                                             <img src="/icons/linkedin.png" className="img-icon" />
                                         </a>
-                                        <a href="mailto:sakshi@email.com" className="social-icon" title="Email">
+                                        <a href="mailto:gangwani.sakshi15@email.com" className="social-icon" title="Email">
                                             <img src="/icons/email.png" className="img-icon" />
                                         </a>
                                     </div>
 
                                     <div className="social-row">
-                                        <a href="https://behance.net" target="_blank" className="social-icon" title="Behance">
+                                        <a href="https://www.behance.net/sakshigangwani" target="_blank" className="social-icon" title="Behance">
                                             <img src="/icons/behance.png" className="img-icon" />
                                         </a>
-                                        <a href="https://dribbble.com" target="_blank" className="social-icon" title="Dribbble">
+                                        <a href="https://dribbble.com/sakshi115s" target="_blank" className="social-icon" title="Dribbble">
                                             <img src="/icons/dribbble.png" className="img-icon" />
                                         </a>
                                         <a href="https://instagram.com" target="_blank" className="social-icon" title="Instagram">

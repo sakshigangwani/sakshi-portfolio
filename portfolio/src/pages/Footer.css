@@ -1,9 +1,9 @@
 .footer {
-  background-color: #0d0d0d;
+  background-color: transparent;
   color: white;
   padding: 3rem 1rem 2rem;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-title {

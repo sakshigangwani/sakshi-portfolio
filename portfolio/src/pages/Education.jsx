@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import "./Education.css";
 
 import uscLogo from "../images/usc-logo.png";
@@ -38,13 +39,33 @@ const educationData = [
     },
 ];
 
+const fadeInVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut",
+        },
+    },
+};
+
 const Education = () => {
     const [activeTab, setActiveTab] = useState(educationData[0].id);
-
     const activeData = educationData.find(item => item.id === activeTab);
 
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
     return (
-        <div className="education-tabs-container">
+        <motion.div
+            className="education-tabs-container"
+            ref={ref}
+            variants={fadeInVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+        >
             <h2 className="education-title">Education</h2>
             <p className="education-subtitle">My Academic Journey. One class at a time:</p>
 
@@ -61,7 +82,13 @@ const Education = () => {
             </div>
 
             {activeData && (
-                <div className="tab-content">
+                <motion.div
+                    className="tab-content"
+                    variants={fadeInVariants}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ delay: 0.3 }}
+                >
                     <img src={activeData.logo} alt={activeData.institute} className="tab-logo" />
                     <h3 className="instituteTitle">{activeData.institute}</h3>
                     <h4 className="locationTitle">{activeData.location}</h4>
@@ -70,9 +97,9 @@ const Education = () => {
                     <p className="grade">
                         <strong>Grade:</strong> {activeData.grade}
                     </p>
-                </div>
+                </motion.div>
             )}
-        </div>
+        </motion.div>
     );
 };
 

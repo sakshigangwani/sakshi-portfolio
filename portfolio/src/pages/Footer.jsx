@@ -5,7 +5,7 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 const Footer = () => {
   return (
     <footer className="footer">
-      <h3 className="footer-title">Your Name</h3>
+      <h3 className="footer-title">Sakshi Gangwani</h3>
       
       <ul className="footer-links">
         <li><a href="#about">About</a></li>
@@ -23,7 +23,7 @@ const Footer = () => {
       </div>
 
       <p className="footer-copy">
-        © {new Date().getFullYear()} Your Name. All rights reserved.
+        © {new Date().getFullYear()} Sakshi Gangwani. All rights reserved.
       </p>
     </footer>
   );
