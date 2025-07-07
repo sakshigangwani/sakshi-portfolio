@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import './Patent.css';
 
 const projectImages = [
@@ -12,13 +11,7 @@ const projectImages = [
 const Patent = () => {
   return (
     <section className="patent-showcase">
-      <motion.div
-        className="container"
-        initial={{ opacity: 0, y: 0 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }} // only trigger once, 30% in view
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-      >
+      <div className="container">
         {/* Patent Info */}
         <h2 className="title">🚀 Patent Publication</h2>
         <p className="subtitle">IoT Enabled Robot for Detecting Gas Pipe Leakage</p>
@@ -89,7 +82,7 @@ const Patent = () => {
             ))}
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
