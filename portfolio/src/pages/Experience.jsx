@@ -9,7 +9,7 @@ const experienceData = [
     company: "Meshnet Electronics LLP",
     location: "Andheri, Mumbai, India",
     position: "Technology Associate Intern - Full Stack & Embedded Firmware Developer",
-    duration: "Nov 2023 – Dec 2025",
+    duration: "Nov 2023 – Jan 2025",
     description: [
       "Led a team of 5 to build IoT dashboards using ThingsBoard for real-time industrial monitoring.",
       "Developed embedded firmware using ESP-IDF for ESP32 boards adhering to MISRA C guidelines.",
